@@ -992,12 +992,14 @@ pub struct PruneStateHistoryConfig {
 impl PruneStateHistoryConfig {
     /// Returns `true` if writing state history is supported
     pub fn is_state_history_supported(&self) -> bool {
-        !self.enabled || self.max_memory_history.is_some()
+        // !self.enabled || self.max_memory_history.is_some()
+        false
     }
 
     /// Returns tru if this setting was enabled.
     pub fn is_config_enabled(&self) -> bool {
-        self.enabled
+        // self.enabled
+        true
     }
 
     pub fn from_args(val: Option<Option<usize>>) -> Self {
